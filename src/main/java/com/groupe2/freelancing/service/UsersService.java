@@ -1,5 +1,7 @@
 package com.groupe2.freelancing.service;
 
-public interface UsersService {
+import com.groupe2.freelancing.model.Users;
 
+public interface UsersService {
+	Users saveUser(Users user);
 }

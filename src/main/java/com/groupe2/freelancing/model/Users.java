@@ -47,6 +47,28 @@ public class Users {
 	@Column(name="registrationDate")
 	private String registrationDate;
 	
+
+	public Users(long id, String firstname, String lastname, String username, String email, String phoneNumber,
+			String role, String password, String picturePath, String gender, String status, String registrationDate) {
+		super();
+		this.id = id;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.username = username;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
+		this.role = role;
+		this.password = password;
+		this.picturePath = picturePath;
+		this.gender = gender;
+		this.status = status;
+		this.registrationDate = registrationDate;
+	}
+	
+	public Users() {
+		
+	}
+
 	public long getId() {
 		return id;
 	}
