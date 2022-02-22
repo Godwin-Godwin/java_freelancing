@@ -65,8 +65,8 @@ public class Services {
 		return provider_id;
 	}
 
-	public void setProvider_id(String provider_id) {
-		this.provider_id = provider_id;
+	public void setProvider_id(String l) {
+		this.provider_id = l;
 	}
 
 	public String getDescription() {

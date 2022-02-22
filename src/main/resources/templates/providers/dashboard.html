@@ -163,7 +163,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Log Out</span>
+            <span class="nav-link-text ms-1" th:href="@{login}">Log Out</span>
           </a>
         </li>
       </ul>
@@ -192,7 +192,7 @@
               <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
                 <span class="d-sm-inline d-none">
 	                <img th:src="@{img/MaleAvatar.jpg}" alt="PIC" width="50" height="50" class="rounded-pill mx-2">
-	                <span class="fw-bold">Provider Name</span>
+	                <span class="fw-bold" th:text="${currentUser.username}">Provider Name</span>
                 </span>
               </a>
             </li>
@@ -294,7 +294,7 @@
           <div class="card mb-4">
             <div class="card-header pb-2 d-flex justify-content-between">
               <h6>Services</h6> 
-              <a type="button" class="btn bg-gradient-primary w-15 mb-0 mx-4" href="../pages/addservice.html"><i class="fas fa-plus"></i> Add A Service</a>
+              <a type="button" class="btn bg-gradient-primary w-15 mb-0 mx-4" th:href="@{/addservice}"><i class="fas fa-plus"></i> Add A Service</a>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">

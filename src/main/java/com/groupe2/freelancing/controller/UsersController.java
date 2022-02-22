@@ -17,6 +17,8 @@ import com.groupe2.freelancing.service.UsersService;
 @Controller
 public class UsersController {
 	
+	public Users currentUser;
+	
 	@Autowired
 	private UsersRepository usersRepository;
 	
@@ -53,8 +55,9 @@ public class UsersController {
 	}
 	
 	@GetMapping("/dashboard")
-	public String dashboard() {
-		return "dashboard";
+	public String dashboard(Model model) {
+		model.addAttribute("currentUser", currentUser);
+		return "providers/dashboard";
 	}
 	
 	@PostMapping("/login")
@@ -62,7 +65,7 @@ public class UsersController {
 		String authEmail = authUser.getEmail();
 		String authPassword = authUser.getPassword();
 		
-		Users currentUser = usersRepository.getUserForLogin(authEmail, authPassword);
+		currentUser = usersRepository.getUserForLogin(authEmail, authPassword);
 
         if (currentUser == null) {
             return "login";
@@ -70,7 +73,7 @@ public class UsersController {
         else {
         	System.out.println(currentUser);
         	System.out.println(currentUser.getPhoneNumber());
-        	return "providers/dashboard";	
+        	return "redirect:/dashboard";	
         }   
 	}
 	
